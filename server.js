@@ -1,11 +1,14 @@
 const express = require('express');
 const path = require('path');
+const notes = require("./routes/notes.js");
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
 
 app.use(express.static('public'));
+
+app.use("/api", notes);
 
 // GET Route for homepage
 app.get('/', (req, res) =>

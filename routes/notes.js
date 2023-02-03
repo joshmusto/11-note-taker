@@ -1,28 +1,25 @@
 //file needs express router
+const fs = require('fs');
 const notes = require('express').Router();
 
 // GET notes
 notes.get('/notes', (req, res) => {
-    readFromFile('/db/db.json').then((data) => res.json(JSON.parse(data)));
+    fs.readFile('./db/db.json', (err, data) => {
+      if (err) console.log(err);
+      else {
+        res.json(JSON.parse(data));
+      }
+    })
   });
 
 // POST new note
 notes.post('/notes', (req, res) => {
-    console.log(req.body);
-  
-    const { title, text } = req.body;
-  
-    if (req.body) {
-      const newNote = {
-        title,
-        text,
-    };
-  
-      readAndAppend(newNote, '/db/db.json');
-      res.json(`New note added`);
-    } else {
-      res.error('Note could not be added');
-    }
+    fs.appendFile('./db/db.json', (err, data) => {
+      if (err) console.log(err);
+      else {
+        
+      }
+    })
   });
 
 
