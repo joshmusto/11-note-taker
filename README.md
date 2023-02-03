@@ -2,19 +2,21 @@
 
 ## Description
 
-description goes here
+This site is used to write and save notes. These notes can be given titles, saved, loaded, and deleted.
 
 ## Table of Contents
 
-- [Usage](#usage)
+<!--- - [Usage](#usage) -->
 - [Credits](#credits)
 - [Contribution](#contribution)
 - [Questions](#questions)
 
+<!---
 ## Usage
 
 usage instructions
 ![screenshot of program in-use](src/screenshot.PNG)
+-->
 
 ## Credits
 
