@@ -1,13 +1,16 @@
-//file needs express router
+//things the file needs
 const fs = require('fs');
+const { title } = require('process');
 const notes = require('express').Router();
+const { v4: uuidv4 } = require('uuid');
 
-// GET notes
+
+// GET saved notes
 notes.get('/notes', (req, res) => {
     fs.readFile('./db/db.json', (err, data) => {
       if (err) console.log(err);
       else {
-        res.json(JSON.parse(data));
+        return res.json();
       }
     })
   });
@@ -17,7 +20,7 @@ notes.post('/notes', (req, res) => {
     fs.appendFile('./db/db.json', (err, data) => {
       if (err) console.log(err);
       else {
-        
+
       }
     })
   });
